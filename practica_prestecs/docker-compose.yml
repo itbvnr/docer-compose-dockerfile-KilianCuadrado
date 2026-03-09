@@ -11,7 +11,7 @@ services:
       MYSQL_PASSWORD: pwd
     volumes:
       - prestecs_db_data:/var/lib/mysql
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:ro,z
     restart: unless-stopped
 
   c_web:
@@ -20,7 +20,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./index.php:/var/www/html/index.php
+      - ./index.php:/var/www/html/index.php:z
     depends_on:
       - c_bd3
     environment:
