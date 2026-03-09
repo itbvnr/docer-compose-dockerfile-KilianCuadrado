@@ -2,9 +2,9 @@
 // 1. Configuració de la connexió llegint variables d'entorn
 // Si la variable DB_HOST no existeix, fem servir 'c_bd3' per defecte
 $host = getenv('DB_HOST') ?: 'c_bd3';
-$user = getenv('MYSQL_USER') ?: 'user_dawe';
-$pass = getenv('MYSQL_PASSWORD') ?: 'pwd';
-$db   = getenv('MYSQL_DATABASE') ?: 'db_dawe';
+$user = getenv('DB_USER') ?: 'user_prestecs';
+$pass = getenv('DB_PASS') ?: 'pwd';
+$db   = getenv('DB_NAME') ?: 'db_prestecs';
 
 // 2. Intent de connexió
 $conn = new mysqli($host, $user, $pass, $db);
